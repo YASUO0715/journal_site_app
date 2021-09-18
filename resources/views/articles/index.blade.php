@@ -14,5 +14,6 @@
             <li><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></li>
         @endforeach
       </ul>
+      <a href="/articles/create">投稿</a>
   </body>
   </html>
