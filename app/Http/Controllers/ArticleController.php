@@ -45,4 +45,35 @@ class ArticleController extends Controller
         $article = Article::find($id);
         return view('articles.show', ['article' => $article]);
     }
+
+    public function edit($id)
+    {
+        $article = Article::find($id);
+        return view('articles.edit', ['article' => $article]);
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        // ここはidで探して持ってくる以外はstoreと同じ
+        $article = Article::find($id);
+
+        // 値の用意
+        $article->title = $request->title;
+        $article->body = $request->body;
+        $article->timestamps = false;
+
+        // 保存
+        $article->save();
+
+        // 登録したらindexに戻る
+        return redirect('/articles');
+    }
+
+    public function destroy($id)
+    {
+        $article = Article::find($id);
+        $article->delete();
+        return redirect('/articles');
+    }
 }
