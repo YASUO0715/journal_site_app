@@ -36,8 +36,7 @@
         </p>
         <p>
             <label for="body">本文</label>
-            <textarea type="text" name="body"
-                value="{{ old('body', $article->body) }}">{{ old('body', $article->body) }}</textarea>
+            <textarea type="text" name="body">{{ old('body', $article->body) }}</textarea>
         </p>
 
         <input type="submit" value="更新">

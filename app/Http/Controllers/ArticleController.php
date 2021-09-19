@@ -26,11 +26,6 @@ class ArticleController extends Controller
         // インスタンスの作成
         $article = new Article;
 
-        // 値の用意
-        $article->title = $request->title;
-        $article->body = $request->body;
-        $article->timestamps = false;
-
         // インスタンスに値を設定して保存
         $article->save();
 
@@ -57,11 +52,6 @@ class ArticleController extends Controller
     {
         // ここはidで探して持ってくる以外はstoreと同じ
         $article = Article::find($id);
-
-        // 値の用意
-        $article->title = $request->title;
-        $article->body = $request->body;
-        $article->timestamps = false;
 
         // 保存
         $article->save();

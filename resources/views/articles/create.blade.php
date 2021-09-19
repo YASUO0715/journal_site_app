@@ -32,9 +32,7 @@
         <p>
             <label for="body">本文</label>
             <textarea type="text" name="body" value ="{{ old ('body') }}">{{ old ('body') }}</textarea>
-        
         </p>
-        
         <input type="submit" value="登録">
     </form>
 </body>
